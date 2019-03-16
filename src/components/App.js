@@ -24,7 +24,7 @@ class App extends Component {
         const location = res.data.location;
         const avatar = res.data.avatar_url;
         this.setState({
-          id: id,
+          id,
           location,
           avatar
         })
@@ -41,8 +41,10 @@ class App extends Component {
           <h1>GitHub User Search</h1>
         </header>
         <FormUser getUser={this.getUser} />
-        {this.state.id ? // This ternary operator will show us our user data in a table only in case there exist data in our state, if not will show <p>Complete with username.</p>
-          <table style={{width:"100%"}}>
+        {this.state.id ? 
+        // This ternary operator will show us our user data in a table only in case
+        //there exist data in our state, if not will show <p>Complete with username.</p>
+          <table>
             <tbody>
               <tr>
                 <th>Id Number</th>
@@ -69,4 +71,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
